@@ -1,0 +1,94 @@
+<div class="left-container">
+  <div class="grey-heading">Follow the step to place your order! </div><br>
+<div class="calculate">
+  <div class="calculate-heading">
+    <p>Calculate Price</p>
+  </div>
+  <div class="calculate-step">
+    1 of 3
+  </div>
+
+</div>
+<div class="container">
+  <div class="progress-bar">
+    <div class="progress-fill progress-fill-blue"></div>
+  </div>
+  <div class="progress-bar">
+    <p>Provide Detials</p>
+  </div>
+  <div class="progress-bar">
+    <p>Review Information</p>
+  </div>
+</div>
+<form [formGroup]="checkoutForm">
+  <div class="email-phone-card">
+    <div class="sub-email-phone-card">
+      <label for="email-input">Email Address <span style="color:red">*</span></label>
+      <div class="input-container">
+        <input type="email" class="email-input" id="email-input" placeholder="Email" formControlName="email">
+      </div>
+      <div class="phone-container">
+
+        <label for="phone-input">Phone Number <span style="color:red">*</span></label>
+        <div class="input-container">
+          <div class="country-code">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg/2560px-Flag_of_Great_Britain_%281707%E2%80%931800%29.svg.png"
+              alt="Country Flag">
+            <span>+1</span>
+          </div>
+          <input type="tel" class="phone-input" id="phone-input" placeholder="Phone Number" formControlName="phone">
+        </div>
+      </div>
+    </div>
+    <div class="calculate-line-container">
+      <div class="calculate-line"></div>
+      <div class="text-between-line">Calculate Price</div>
+      <div class="calculate-line"></div>
+    </div>
+    <div class="container-after-seperator">
+      <div class="form-group">
+        <label for="doc-type">Document Type</label>
+        <select id="doc-type" class="select-wrapper" formControlName="doc_type">
+          <option value="">Select Document Type</option>
+          <option *ngFor="let docType of documentTypes" [value]="docType.value">{{docType.label}}</option>
+        </select>
+      </div>
+      <div class="academic-level">
+        <label for="academic-level">Academic Level <span style="color:red">*</span></label>
+        <select formControlName="academic_level" id="academic-level" class="select-wrapper">
+          <option value="">Select Academic Level </option>
+          <option *ngFor="let acadLevel of academicLevels" [value]="acadLevel.value">{{acadLevel.label}}</option>
+        </select>
+      </div>
+      <div style="display: flex;">
+
+        <div style="margin-top: 2pc;"> <label for="academic-level">Number of pages <span style="color:red">*</span></label>
+          <div class="no-of-pages">
+
+            <button class="subtract-btn" (click)="removeNumberOfPages()">-</button>
+            <input type="number" class="input-add-minus-field" formControlName="number_of_pages" readonly>
+            <button class="add-btn" (click)="addNumberOfPages()">+</button>
+          </div>
+        </div>
+        <div class="deadline-container" style="margin-top: 2pc;">
+          <label id="academic-level">Deadline Container <span style="color:red">*</span></label>
+          <form  [formGroup]="dead_line">
+            <div class="no-of-pages" style="margin-top: 12px;">
+              <input type="date" id="date-input" formControlName="date">
+                <input type="time" id="time-input" formControlName="time">
+            </div>
+          </form>
+          </div>
+        </div>
+
+
+    </div>
+    <div style=" text-align: right; margin-top: 2pc;">
+
+      <button class="next-step next-step--primary" (click)="getPriceDetail()" [disabled]="!checkoutForm.valid" [class.disabled]="!checkoutForm.valid" >Next Step</button>
+    </div>
+  </div>
+</form>
+
+</div>

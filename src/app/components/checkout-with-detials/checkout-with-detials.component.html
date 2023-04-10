@@ -1,142 +1,112 @@
 <div class="main-container">
-  <div class="left-container">
-    <div class="grey-heading">Follow the step to place your order! </div><br>
-  <div class="calculate">
-    <div class="calculate-heading">
-      <p>Calculate Price</p>
-    </div>
-    <div class="calculate-step">
-      1 of 3
-    </div>
-
-  </div>
-  <div class="container">
-    <div class="progress-bar">
-      <div class="progress-fill progress-fill-blue"></div>
-    </div>
-    <div class="progress-bar">
-      <p>Provide Detials</p>
-    </div>
-    <div class="progress-bar">
-      <p>Review Information</p>
-    </div>
-  </div>
-  <div class="email-phone-card">
-    <div class="sub-email-phone-card">
-      <label for="email-input">Email Address <span style="color:red">*</span></label>
-      <div class="input-container">
-        <input type="email" class="email-input" id="email-input" placeholder="Email">
-      </div>
-      <div class="phone-container">
-
-        <label for="phone-input">Phone Number <span style="color:red">*</span></label>
-        <div class="input-container">
-          <div class="country-code">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg/2560px-Flag_of_Great_Britain_%281707%E2%80%931800%29.svg.png"
-              alt="Country Flag">
-            <span>+1</span>
-          </div>
-          <input type="tel" class="phone-input" id="phone-input" placeholder="Phone Number">
-        </div>
-      </div>
-    </div>
-    <div class="calculate-line-container">
-      <div class="calculate-line"></div>
-      <div class="text-between-line">Calculate Price</div>
-      <div class="calculate-line"></div>
-    </div>
-    <div class="container-after-seperator">
-      <div class="form-group">
-        <label for="doc-type">Document Type</label>
-        <select id="doc-type" class="select-wrapper" [(ngModel)]="documentType">
-          <option value="">Select Document Type</option>
-          <option *ngFor="let docType of documentTypes" [value]="docType.value">{{docType.label}}</option>
-        </select>
-      </div>
-      <div class="academic-level">
-        <label for="academic-level">Academic Level <span style="color:red">*</span></label>
-        <select [(ngModel)]="academicLevel" id="academic-level" class="select-wrapper">
-          <option value="">Select Academic Level </option>
-          <option *ngFor="let acadLevel of academicLevels" [value]="acadLevel.value">{{acadLevel.label}}</option>
-        </select>
-      </div>
-      <div style="display: flex;">
-
-        <div style="margin-top: 2pc;"> <label for="academic-level">Number of pages <span style="color:red">*</span></label>
-          <div class="no-of-pages">
-
-            <button class="subtract-btn">-</button>
-            <input type="number" class="input-add-minus-field" placeholder="Enter a value">
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-        <div class="deadline-container" style="margin-top: 2pc;">
-          <label id="academic-level">Deadline Container <span style="color:red">*</span></label>
-          <div class="no-of-pages" style="margin-top: 12px;">
-            <input type="date" id="date-input">
-              <input type="time" id="time-input">
-              <select id="am-pm-select">
-                <option value="AM">AM</option>
-                <option value="PM">PM</option>
-              </select>
-          </div>
-          </div>
-        </div>
-
-
-    </div>
-    <div style=" text-align: right; margin-top: 2pc;">
-
-      <button class="next-step next-step--primary">Next Step</button>
-    </div>
-  </div>
-
-  </div>
+  <app-price-form (discountedPrice)="discountedPrice($event)"></app-price-form>
   <div class="right-container">
-    <div class="checkout-page">
-      <div class="payment-form">
-        <h2>Payment Details</h2>
-        <form>
-          <label for="cardNumber">Card Number</label>
-          <input type="text" id="cardNumber" placeholder="Card Number">
-
-          <label for="cardExpiry">Expiration Date</label>
-          <input type="text" id="cardExpiry" placeholder="MM/YY">
-
-          <label for="cardCvc">CVC</label>
-          <input type="text" id="cardCvc" placeholder="CVC">
-
-          <label for="cardHolderName">Cardholder Name</label>
-          <input type="text" id="cardHolderName" placeholder="Cardholder Name">
-
-          <label for="billingAddress">Billing Address</label>
-          <input type="text" id="billingAddress" placeholder="Billing Address">
-
-          <!-- Additional fields and form elements here -->
-
-        </form>
+    <h3 class="right-container-heading">Summary</h3>
+    <div class="sub-total-container">
+      <div class="sub-total-left-container">
+        <span class="sub-total-title">Sub-Total:</span><br>
+        <div class="sub-total-save-amount">You save ${{actualPrice - discountPrice}}!</div>
+        <!-- Added sub-total-save-amount container -->
       </div>
-      <div class="total-amount">
-        <h2>Total Amount</h2>
-        <p>$100.00</p> <!-- Example amount to be charged -->
-      </div>
-      <button class="submit-button">Proceed to Payment</button>
-      <div class="payment-method-icons">
-        <!-- Payment method icons or logos here -->
-        <div>
-
-          <img src="https://t3.ftcdn.net/jpg/04/23/98/22/360_F_423982213_kRrbwgSBG6xOH1fmUVPVl2HBNhHOZAO9.jpg" alt="Mastercard">
+      <div class="sub-total-right-container">
+        <div class="sub-total-price-container">
+          <div style="position: relative;">
+            <span class="sub-total-old-price">${{actualPrice}}</span>
+            <span class="sub-total-price-cross" *ngIf="actualPrice!=0"></span>
+          </div>
+          <hr class="sub-total-price-line">
+          <span class="sub-total-new-price">${{discountPrice}}</span>
         </div>
-        <div>
-
-          <img src="https://thumbs.dreamstime.com/b/delhi-india-february-popular-credit-card-companies-logos-including-mastercard-visa-american-express-more-211749084.jpg" alt="Mastercard">
-        </div>
-      </div>
-      <div class="footer">
-        <!-- Footer content here -->
       </div>
     </div>
+    <hr>
+    <div class="pay-50-percent-input-container">
+      <input type="checkbox" [(ngModel)]="showPay50Percent" id="pay-50-checkbox">
+      <label for="pay-50-checkbox" class="pay-50-percent-label"> Prepay 50%</label>
+      <br>
+      <div [ngStyle]="{'display': showPay50Percent ? 'block' : 'none'}" id="pay-50-container" class="pay-50-percent">
+        <div class="pay-50-percent-row">
+          <span class="pay-50-percent-label">Pay Now:</span>
+          <span class="pay-50-percent-value">${{fiftyPercentAmount}}</span>
+        </div>
+        <div class="pay-50-percent-row">
+          <span class="pay-50-percent-label">Pay After Delivery:</span>
+          <span class="pay-50-percent-value">${{fiftyPercentAmount}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sub-total-container" style="background-color: rgba(128, 128, 128, 0.186);padding:20px 0px 20px 0px;">
+      <div class="sub-total-left-container">
+        <span class="sub-total-title">Total:</span><br>
+      </div>
+      <div class="sub-total-right-container">
+        <div class="sub-total-price-container">
+          <div style="position: relative;">
+            <span class="sub-total-new-price">${{discountPrice}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="radio-container">
+      <input type="radio" id="agree-policeis" name="agree" class="radio-input">
+      <label for="agree-policeis" class="radio-label">
+        I agree with <a href="#">Policeis</a> and <a href="#">Terms and Conditions</a>
+      </label>
+    </div>
+
+    <h3 class="right-container-heading">Payment Method</h3>
+
+    <div class="payment-method-cards-container">
+      <div class="payment-method-card" id="paymentMethodCardPayWithCard" (click)="onPayWithCardClick()">
+        <div class="payment-method-card-image">
+          <img src="../../../assets/debit-cards.png" alt="Pay with Card" width="30px" height="30px">
+
+        </div>
+        <h2 class="payment-method-card-title" [ngStyle]="{'color': showCardContent ? '#0c8ce9' : ''}">Pay with Card</h2>
+      </div>
+
+      <div class="payment-method-card-1" id="paymentMethodCardPayWithWallet" (click)="onPayWithWalletClick()">
+        <div class="payment-method-card-1-image">
+          <img src="../../../assets/wallet.png" alt="Pay with Wallet" width="30px" height="30px">
+        </div>
+        <h2 class="payment-method-card-1-title" [ngStyle]="{'color': showWalletContent ? '#0c8ce9' : ''}">Pay with Wallet</h2>
+      </div>
+    </div>
+
+
+<div style="display: flex;justify-content: space-between;padding: 0px 19px;"  *ngIf="showWalletContent">
+  <div class="wallet-content" >
+    <div class="wallet-row" *ngFor="let row of walletRows">
+      <div class="wallet-left">
+        <span class="wallet-amount-label">{{ row.label }}:</span>
+      </div>
+      <div class="wallet-right">
+        <span class="wallet-amount">{{ row.amount }}</span>
+      </div>
+    </div>
+  </div>
+  <a href="" >Top_Up</a>
+</div>
+<div style="display: flex;justify-content: center;">
+  <button class="proceed-to-payment-btn">
+    <span class="btn-text">Proceed to Payment</span>
+  </button>
+</div>
+
+<div style="margin-top: 1pc;">
+  <img src="../../../assets/stripe_payment.png" alt="" style="width:100%">
+</div>
+<div style="display: flex; flex-direction: row;justify-content: center;margin-top: 1pc;margin-bottom: 1pc;">
+  <img src="../../../assets/dcma.png" alt="" style="width:30%;height: 30%;">
+  <img src="../../../assets/pci.png" alt="" style="width:30%;height: 84px;">
+  <img src="../../../assets/ssl.png" alt="" style="width:30%;height: 30%;">
+
+</div>
+
+
+
   </div>
 
 </div>

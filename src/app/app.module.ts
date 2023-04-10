@@ -10,7 +10,9 @@ import { FaqComponent } from './components/faq/faq.component';
 import { HowThingsWillWorkComponent } from './components/how-things-will-work/how-things-will-work.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutWithDetialsComponent } from './components/checkout-with-detials/checkout-with-detials.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { PriceFormComponent } from './components/price-form/price-form.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { FormsModule } from '@angular/forms';
     FaqComponent,
     HowThingsWillWorkComponent,
     FooterComponent,
-    CheckoutWithDetialsComponent
+    CheckoutWithDetialsComponent,
+    PriceFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

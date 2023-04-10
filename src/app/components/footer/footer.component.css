@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6pc;
+  padding: 3pc;
+  background-color: #f3f3f3;
+}
+.col {
+  flex-basis: 20%;
+  text-align: center;
+}
+.container {
+  margin-top: 10px;
+  text-align: center;
+}
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+p {
+  margin-top: 15px;
+  width: 12pc;
+}

@@ -1,0 +1,99 @@
+/* app.component.css */
+
+.container {
+  display: flex;
+  border-left: 5px solid #fff; /* white border on the left */
+  margin-left: 9pc;
+  margin-right: 2pc;
+  margin-bottom: 5pc;
+  padding-bottom: 1pc;
+}
+
+.questions-container {
+  flex: 25%;
+  background-color: #fff; /* white background */
+}
+
+.question-list {
+  list-style-type: none;
+  overflow-y: auto;
+  max-height: 46pc;
+  padding: 0;
+  height: 100%;
+}
+
+.question-item {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out; /* smooth transition */
+   position: relative; /* Make the container a positioned element */
+  width: 300px; /* Set the width of the container */
+  height: 50px; /* Set the height of the container */
+  background-color: #fff; /* Set the background color of the container */
+  overflow: hidden; /* Hide content that exceeds the container's dimensions */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* Add shadow outside o*/
+  margin:20px;
+}
+.vertical-bar {
+  position: absolute; /* Position the vertical bar absolutely */
+  top: 0; /* Position it at the top */
+  left: 0; /* Position it at the left */
+  width: 12px; /* Set the width of the vertical bar */
+  height: 100%; /* Set the height of the vertical bar to match the container */
+  background-color: #e0e0e0; /* Set the background color of the vertical bar */
+}
+
+.content {
+  padding-left: 10px; /* Add padding to the content area to avoid overlapping with the vertical bar */
+}
+
+
+.question-item:hover {
+  background-color: #0c8ce9; /* blue background on hover */
+  color: #fff;
+}
+
+.selected {
+  background-color: #0c8ce9; /* green background for selected question */
+  color: #fff; /* white text color for selected question */
+}
+
+.description-container {
+  flex: 75%;
+  padding: 0 20px;
+  background-color: #0c8ce9;
+  color: #fff;
+  margin:4pc;
+}
+
+.description {
+  display: block;
+}
+
+.no-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 4pc;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+  flex-grow: 1;
+  max-width: 38pc;
+  padding-left: 10pc;
+  padding-top: 3pc;
+  padding-bottom: 3pc;
+}
+
+.main{
+  background-color:#dbdbdb12;
+}

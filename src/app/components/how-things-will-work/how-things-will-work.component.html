@@ -1,0 +1,28 @@
+
+<div class="main">
+<!-- app.component.html -->
+<div class="row">
+  <div class="heading">Essay writer - custom essay writing servics</div>
+</div>
+<div class="container">
+  <div class="questions-container">
+    <ul class="question-list">
+      <li *ngFor="let question of questions"
+          [ngClass]="{'question-item': true, 'selected': selectedQuestion === question}"
+          (click)="onQuestionClick(question)">
+          <div class="vertical-bar"></div>
+          <div class="content">{{question.title}}</div>
+        <!-- {{ question.title }} -->
+      </li>
+    </ul>
+  </div>
+  <div class="description-container">
+    <div class="description" *ngIf="selectedQuestion">
+      <p>{{ selectedQuestion.description }}</p>
+    </div>
+    <div class="no-description" *ngIf="!selectedQuestion">
+      <p>No question selected</p>
+    </div>
+  </div>
+</div>
+</div>

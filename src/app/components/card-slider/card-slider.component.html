@@ -1,0 +1,19 @@
+
+<div class="row">
+  <div class="heading">Essay writing servics we offer</div>
+  <div class="buttons">
+      <button class="button btn1" (click)="moveToPrevCard()">&#9001;</button>
+      <button class="button btn2" (click)="moveToNextCard()">&#9002;</button>
+  </div>
+</div>
+<div class="slider-container" #sliderContainer>
+  <div class="slider" >
+    <div class="cards">
+      <div class="card" *ngFor="let card of cards">
+        <div>{{card.id}}</div>
+        <h3>{{ card.title }}</h3>
+        <p class="content">{{ card.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>

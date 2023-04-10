@@ -1,0 +1,17 @@
+<div class="header">
+		<div class="header__part header__part--left">
+      <div class="header__part" *ngFor="let item of hostDetails">
+				<div class="header__icon">
+          <img [src]="item.src" alt="Icon" width="25" height="25">
+				</div>
+				<div class="header__text">
+          {{item.description}}
+				</div>
+			</div>
+
+		</div>
+		<div class="header__part">
+			<button class="header__button login-signup">Login or Signup</button>
+			<button class="header__button header__button--primary">Order Now</button>
+		</div>
+	</div>

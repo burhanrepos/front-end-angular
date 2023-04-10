@@ -1,0 +1,84 @@
+body {
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 20px;
+  background-color: #0c8ce9;
+}
+
+.header__part {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.header__part--left {
+  margin-right: auto;
+}
+
+.header__icon {
+  font-size: 24px;
+    margin-right: 5px;
+    filter: invert(100%);
+    margin-top: 5px;
+}
+
+.header__text {
+  font-size: 14px;
+}
+
+.login-signup{
+  border: 1px solid;
+  color: #fff;
+  background-color: transparent;
+}
+.header__button {
+  /* background-color: #fff; */
+  /* color: #333; */
+  /* border: none; */
+  border: 1px solid #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 8px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.header__button:hover {
+  background-color: #ddd;
+}
+
+.header__button--primary {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsive Styles for Mobile Phones */
+@media screen and (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .header__part {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header__button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

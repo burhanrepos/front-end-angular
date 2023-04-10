@@ -1,0 +1,31 @@
+<div class="banner">
+
+	<header class="header">
+		<div class="header__logo">
+      <img src="../../../assets/logo.png" alt="Icon" class="logo">
+      <!-- <img src="../../../assets/logo.jpg" alt="Icon" class="logo"> -->
+    </div>
+		<nav class="header__nav">
+			<div class="header__nav-item" *ngFor="let item of navItems">{{item}}</div>
+		</nav>
+	</header>
+	<main class="main">
+		<div class="main__text">{{title}}</div>
+		<button class="main__button">Order Now</button>
+		<div class="main__ui">
+      <div class="container" *ngFor="let item of items">
+        <div class="icon">
+          <!-- Add your icon HTML code here -->
+          <img [src]="item.src" alt="Icon" class="icon-landing-page">
+        </div>
+        <div class="content">
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+        </div>
+      </div>
+    </div>
+	</main>
+
+
+
+</div>

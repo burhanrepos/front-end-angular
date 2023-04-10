@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color:transparent;
+  /* color: #fff; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 20px;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0;
+  right: 0; */
+}
+
+.header__logo {
+  margin-right: auto;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header__nav-item {
+  margin-left: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+}
+.header__nav-item:hover {
+  font-weight: bold;
+  font-size: 13px;
+}
+.logo{
+  width: 60px;
+  height: 60px;
+}
+.banner{
+  background-image: url('../../../assets/women-with-blue-background.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: calc(100vh - 50px);
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+
+.main {
+  width: 42pc;
+  top: 26px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+  position: absolute;
+    left: 40px;
+    bottom: 40px;
+}
+
+.main__text {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  margin-bottom: 20px;
+}
+
+.main__button {
+  width: 14pc;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 12px;
+  background-color: #0c8ce9;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+}
+.main__button:hover{
+  background-color: #3f8fc8;
+
+}
+
+.main__ui {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+}
+
+.main__ui-item {
+  flex-basis: calc(50% - 20px);
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.main__ui-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.main__ui-text {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__nav-item {
+    margin-left: 0;
+  }
+
+  .header__logo {
+    margin-right: auto;
+  }
+
+  .main__text {
+    font-size: 24px;
+  }
+
+  .main__button {
+    font-size: 14px;
+  }
+
+  .main__ui-item {
+    flex-basis: calc(100% - 20px);
+  }
+
+  .main__ui-item {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
+.main__ui {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  /* Add styles for the container of icons and content here */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  /* Add styles for each container here */
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-right: 20px;
+  /* Add styles for the icon here */
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  /* Add styles for the title here */
+}
+.container {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically in the center */
+  max-width: 600px; /* Set maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding for spacing */
+}
+
+
+
+
+.description {
+  font-size: 14px;
+  color: #fff;
+  width: 10pc;
+  /* Add styles for the description here */
+}
+.icon-landing-page{
+  width: 50px;
+  height: 50px;
+
+}

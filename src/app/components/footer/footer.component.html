@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col" *ngFor="let image of images">
+    <div class="container">
+      <img src="{{ image.src }}" alt="{{ image.alt }}" class="image">
+      <p>{{ image.text }}</p>
+    </div>
+  </div>
+</div>

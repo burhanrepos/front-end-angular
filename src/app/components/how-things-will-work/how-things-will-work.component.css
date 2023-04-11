@@ -97,3 +97,43 @@
 .main{
   background-color:#dbdbdb12;
 }
+
+/* Add media query for screens with max-width of 768px (mobile screens) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Change flex direction to column */
+    margin-left: 0; /* Remove left margin */
+    margin-right: 0; /* Remove right margin */
+    padding: 0; /* Remove padding */
+  }
+
+  .questions-container {
+    flex: initial; /* Reset flex value to initial */
+    /* max-height: 20pc; */
+    align-self: flex-start; /* Align left in column */
+    /* order: 2; Change order to 2 to place it below description-container */
+    margin: 0; /* Remove margin */
+  }
+
+  .description-container {
+    flex: initial;
+    width: 22pc;
+    padding: 5px;
+    margin: 0px;
+  }
+
+  .description {
+    display: block;
+    padding: 20px; /* Add padding */
+  }
+
+  .no-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .heading{
+    padding-left: 3pc;
+  }
+}

@@ -2,16 +2,18 @@
 <div class="faq-container">
   <h1 class="faq-title">Frequently Asked Questions</h1>
   <div class="faq-accordion">
-    <div class="faq-item" *ngFor="let question of faqs; let i = index;">
-      <div class="faq-question-container" [class.active]="question.active" (click)="toggleAccordion(i)">
-        <div class="faq-question-label">
-          <div class="faq-question-header">Q{{ i + 1 }}</div>
-          <div class="faq-question">{{ question.question }}</div>
+    <div *ngFor="let question of faqs; let i = index;">
+      <div class="faq-item">
+        <div class="faq-question-container" [class.active]="question.active" (click)="toggleAccordion(i)">
+          <div class="faq-question-label">
+            <div class="faq-question-header">Q{{ i + 1 }}</div>
+            <div class="faq-question">{{ question.question }}</div>
+          </div>
+          <div class="arrow"[class.active]="question.active">&#10148;</div>
         </div>
-        <div class="arrow"[class.active]="question.active">&#10148;</div>
-      </div>
-      <div class="faq-answer"[class.active]="question.active">
-        {{ question.answer }}
+        <div class="faq-answer"[class.active]="question.active">
+          {{ question.answer }}
+        </div>
       </div>
     </div>
   </div>

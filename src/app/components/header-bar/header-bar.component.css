@@ -18,7 +18,7 @@ body {
 .header__part {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .header__part--left {
@@ -27,24 +27,22 @@ body {
 
 .header__icon {
   font-size: 24px;
-    margin-right: 5px;
-    filter: invert(100%);
-    margin-top: 5px;
+  margin-right: 5px;
+  filter: invert(100%);
+  margin-top: 5px;
 }
 
 .header__text {
   font-size: 14px;
 }
 
-.login-signup{
+.login-signup {
   border: 1px solid;
   color: #fff;
   background-color: transparent;
 }
+
 .header__button {
-  /* background-color: #fff; */
-  /* color: #333; */
-  /* border: none; */
   border: 1px solid #fff;
   font-weight: bold;
   border-radius: 3px;
@@ -64,8 +62,8 @@ body {
   color: #000;
 }
 
-/* Responsive Styles for Mobile Phones */
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 436px) {
   .header {
     flex-direction: column;
     height: auto;
@@ -73,6 +71,10 @@ body {
   }
 
   .header__part {
+    display: block;
+  }
+  .header_left_part{
+    display: flex;
     margin-right: 0;
     margin-bottom: 10px;
   }
@@ -80,5 +82,8 @@ body {
   .header__button {
     margin-left: 0;
     margin-top: 10px;
+  }
+  .header__part--left {
+    margin: auto;
   }
 }

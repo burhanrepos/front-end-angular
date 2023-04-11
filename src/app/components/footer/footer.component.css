@@ -2,24 +2,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 6pc;
-  padding: 3pc;
+  margin: 6% 3%;
+  padding: 3%;
   background-color: #f3f3f3;
 }
+
 .col {
   flex-basis: 20%;
   text-align: center;
 }
+
 .container {
   margin-top: 10px;
   text-align: center;
 }
+
 .image {
   width: 80px;
   height: 80px;
   object-fit: cover;
 }
+
 p {
   margin-top: 15px;
   width: 12pc;
+}
+
+/* Media query for screens with max-width 768px (mobile devices) */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Change to column layout on mobile */
+  }
+
+  .col {
+    flex-basis: 50%; /* Change to full width on mobile */
+  }
+
+  p {
+    width: 100%; /* Change to full width on mobile */
+  }
 }

@@ -50,12 +50,11 @@ body {
   height: 60px;
 }
 .banner{
-  background-image: url('../../../assets/women-with-blue-background.avif');
+  background-image: url('../../../assets/women-with-pointing.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  height: calc(100vh - 50px);
+  height: 40pc;
   padding-top: 40px;
   padding-left: 40px;
 }
@@ -69,9 +68,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: end;
-  position: absolute;
-    left: 40px;
-    bottom: 40px;
 }
 
 .main__text {
@@ -103,12 +99,12 @@ body {
 
 }
 
+
 .main__ui {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  /* Add styles for the container of icons and content here */
 }
 
 .main__ui-item {
@@ -144,9 +140,18 @@ body {
   .header__logo {
     margin-right: auto;
   }
+  .main{
+    width: 20pc;
+  }
 
   .main__text {
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    margin-bottom: 20px;
   }
 
   .main__button {
@@ -161,13 +166,25 @@ body {
     flex-basis: 100%;
     margin-right: 0;
   }
-}
-.main__ui {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  /* Add styles for the container of icons and content here */
-}
+
+    .banner {
+      background: url('../../../assets/women-with-pointing.jpg') no-repeat center center ;
+      background-size: cover;
+    /* height: 25pc; */
+    width: 100%;
+    }
+    .main__ui {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      max-width: 800px;
+    }
+    .main__ui .container{
+      padding: 0px;
+    }
+  }
+
 
 .container {
   display: flex;

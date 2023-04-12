@@ -23,9 +23,11 @@
 <form [formGroup]="checkoutForm">
   <div class="email-phone-card">
     <div class="sub-email-phone-card">
-      <label for="email-input">Email Address <span style="color:red">*</span></label>
-      <div class="input-container">
-        <input type="email" class="email-input" id="email-input" placeholder="Email" formControlName="email">
+      <div class="email-container">
+        <label for="email-input">Email Address <span style="color:red">*</span></label>
+        <div class="input-container">
+          <input type="email" class="email-input" id="email-input" placeholder="Email" formControlName="email">
+        </div>
       </div>
       <div class="phone-container">
 
@@ -61,7 +63,7 @@
           <option *ngFor="let acadLevel of academicLevels" [value]="acadLevel.value">{{acadLevel.label}}</option>
         </select>
       </div>
-      <div style="display: flex;">
+      <div class="page-deadline-container">
 
         <div style="margin-top: 2pc;"> <label for="academic-level">Number of pages <span style="color:red">*</span></label>
           <div class="no-of-pages">

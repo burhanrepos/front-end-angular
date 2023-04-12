@@ -4,12 +4,13 @@
 }
 .right-container{
   max-width: 30pc;
-  margin-left: 12pc;
+  margin-left: 9pc;
   margin-top: 14pc;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   height: fit-content;
   border-radius: 5px;
 }
+
 
 /* .right-container input {
   flex: 1;
@@ -303,4 +304,14 @@ hr {
 
 .radio-label a:hover {
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .main-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-container{
+    margin: 20px;
+    max-width: 94%;
+  }
 }

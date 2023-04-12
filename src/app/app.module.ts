@@ -13,6 +13,7 @@ import { CheckoutWithDetialsComponent } from './components/checkout-with-detials
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { PriceFormComponent } from './components/price-form/price-form.component';
+import { FooterBarComponent } from './components/footer-bar/footer-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PriceFormComponent } from './components/price-form/price-form.component
     HowThingsWillWorkComponent,
     FooterComponent,
     CheckoutWithDetialsComponent,
-    PriceFormComponent
+    PriceFormComponent,
+    FooterBarComponent
   ],
   imports: [
     BrowserModule,

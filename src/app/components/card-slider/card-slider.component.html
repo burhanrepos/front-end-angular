@@ -9,7 +9,7 @@
 <div class="slider-container" #sliderContainer>
   <div class="slider" >
     <div class="cards">
-      <div class="card" *ngFor="let card of cards">
+      <div [ngClass]="{'firstCard': i == 0, 'card' : i !==0 }" *ngFor="let card of cards;let i =index">
         <div>{{card.id}}</div>
         <h3>{{ card.title }}</h3>
         <p class="content">{{ card.content }}</p>

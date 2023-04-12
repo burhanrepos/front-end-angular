@@ -37,4 +37,10 @@ export class LandingPageWithBannerComponent {
     'Reviews',
     'Blogs'
   ]
+  isMobileMenuOpen: boolean = false; // Flag to track whether mobile menu is open
+
+  // Function to toggle the mobile menu
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }

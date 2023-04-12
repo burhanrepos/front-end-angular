@@ -1,18 +1,18 @@
 
 .left-container{
-  max-width: 45pc;
+  max-width: 50vw;
 }
 
 
 .calculate {
   display: flex;
   align-items: center;
-  width: 45pc;
-  margin-left: 9pc;
+  width: 50vw;
+  /* margin-left: 2vw; */
 }
 .grey-heading{
-  width: 45pc;
-  margin-left: 9pc;
+  width: 50vw;
+  /* margin-left: 2vw; */
 }
 
 .calculate-heading {
@@ -28,8 +28,8 @@
 }
 
 .container {
-  max-width: 45pc;
-  margin-left: 9pc;
+  max-width: 50vw;
+  /* margin-left: 9pc; */
   display: flex;
   flex-direction: row;
 }
@@ -58,11 +58,11 @@
 
 }
 .email-phone-card {
-  width: 45pc;
+  width: 50vw;
   background-color: #fff;
   border-radius: 5px;
   padding: 20px;
-  margin-left: 9pc;
+  /* margin-left: 9pc; */
   margin-top: 5pc;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
@@ -87,7 +87,7 @@
 .phone-input {
   flex: 1;
   padding: 20px;
-  width: 45pc;
+  width: 50vw;
   border-radius: 5px;
   border-bottom: 1px solid #ccc;
   margin-top: 10px;
@@ -254,7 +254,7 @@ select {
 }
 .deadline-container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 ;
 }
 
 .deadline-heading {
@@ -300,6 +300,7 @@ select {
 }
 .page-deadline-container{
   display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
@@ -314,14 +315,20 @@ select {
   .email-phone-card{
     width: 100%;
     max-width: 100%;
-    margin: 20px;
+    /* margin: 20px; */
   }
-.calculate,.grey-heading,.container,.email-input,.phone-input
+.calculate,.grey-heading,.email-input,.phone-input
 {
   width: 100%;
   max-width: 100%;
   margin:20px;
 }
+.container{
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 27px;
+}
+
 .email-container{
   width: 30pc;
 }
@@ -334,4 +341,10 @@ select {
 .deadline-container #date-input{
   width: 115px;
 }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .page-deadline-container{
+    display: flex;
+    flex-direction: column;
+  }
 }

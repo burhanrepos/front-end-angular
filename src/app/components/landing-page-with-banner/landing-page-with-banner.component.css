@@ -9,13 +9,14 @@ body {
 }
 
 .header {
-  background-color:transparent;
+  background-color: transparent;
   /* color: #fff; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
   padding: 0 20px;
+  position: relative;
   /* position: fixed; */
   /* top: 0;
   left: 0;
@@ -41,15 +42,18 @@ body {
   cursor: pointer;
   color: #fff;
 }
+
 .header__nav-item:hover {
   font-weight: bold;
   font-size: 13px;
 }
-.logo{
+
+.logo {
   width: 60px;
   height: 60px;
 }
-.banner{
+
+.banner {
   background-image: url('../../../assets/women-with-pointing.jpg');
   background-size: cover;
   background-position: center;
@@ -82,9 +86,9 @@ body {
 
 .main__button {
   width: 14pc;
-    font-size: 24px;
-    font-weight: 700;
-    padding: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 12px;
   background-color: #0c8ce9;
   color: #fff;
   border: none;
@@ -94,7 +98,8 @@ body {
   margin-top: 40px;
 
 }
-.main__button:hover{
+
+.main__button:hover {
   background-color: #3f8fc8;
 
 }
@@ -140,7 +145,8 @@ body {
   .header__logo {
     margin-right: auto;
   }
-  .main{
+
+  .main {
     width: 20pc;
   }
 
@@ -167,23 +173,25 @@ body {
     margin-right: 0;
   }
 
-    .banner {
-      background: url('../../../assets/women-with-pointing.jpg') no-repeat center center ;
-      background-size: cover;
+  .banner {
+    background: url('../../../assets/women-with-pointing.jpg') no-repeat center center;
+    background-size: cover;
     /* height: 25pc; */
     width: 100%;
-    }
-    .main__ui {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      max-width: 800px;
-    }
-    .main__ui .container{
-      padding: 0px;
-    }
   }
+
+  .main__ui {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+  }
+
+  .main__ui .container {
+    padding: 0px;
+  }
+}
 
 
 .container {
@@ -208,12 +216,18 @@ body {
   color: #fff;
   /* Add styles for the title here */
 }
+
 .container {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Align items vertically in the center */
-  max-width: 600px; /* Set maximum width of the container */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add padding for spacing */
+  display: flex;
+  /* Use flexbox for layout */
+  align-items: center;
+  /* Align items vertically in the center */
+  max-width: 600px;
+  /* Set maximum width of the container */
+  margin: 0 auto;
+  /* Center the container horizontally */
+  padding: 20px;
+  /* Add padding for spacing */
 }
 
 
@@ -225,8 +239,104 @@ body {
   width: 10pc;
   /* Add styles for the description here */
 }
-.icon-landing-page{
+
+.icon-landing-page {
   width: 50px;
   height: 50px;
+
+}
+
+
+/* Hamburger menu button styles */
+.header__nav-item--hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-menu {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+/* Hamburger menu animation */
+.hamburger-menu--1 {
+  animation: rotateTopBar 0.5s forwards;
+}
+
+.hamburger-menu--2 {
+  animation: fadeOut 0.5s forwards;
+}
+
+.hamburger-menu--3 {
+  animation: rotateBottomBar 0.5s forwards;
+}
+
+@keyframes rotateTopBar {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    transform: translateY(7px) rotate(45deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotateBottomBar {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.header__nav-mobile {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: 64px;
+  top: 14px;
+  display: none;
+
+}
+
+.header__nav-mobile-item {
+  color: #000;
+  margin: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  border-bottom: 0.01px solid grey;
+}
+
+/* Media query for tablet and mobile screens */
+@media screen and (max-width: 768px) {
+  .header__nav-item--hamburger {
+    display: block;
+  }
+
+  .header__nav {
+    display: none;
+  }
+  .header__nav-mobile{
+    display: block;
+  }
+
 
 }

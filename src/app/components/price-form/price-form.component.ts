@@ -15,13 +15,13 @@ export class PriceFormComponent {
   }
   checkoutForm = this.formBuilder.group({
     email: new FormControl("",[Validators.required,Validators.email]),
-    phone: new FormControl(""),
-    doc_type: new FormControl(""),
-    academic_level: new FormControl(""),
+    phone: new FormControl("",Validators.required),
+    doc_type: new FormControl("", Validators.required),
+    academic_level: new FormControl("",Validators.required),
     number_of_pages: new FormControl("0"),
     dead_line: this.formBuilder.group({
-      date:new FormControl(""),
-      time:new FormControl(""),
+      date:new FormControl("",Validators.required),
+      time:new FormControl("",Validators.required),
     })
   });
 
@@ -39,6 +39,11 @@ export class PriceFormComponent {
     { label: "Master's Degree", value: 'master' },
     { label: 'PhD', value: 'phd' }
   ];
+  countryList = [
+    { alpha2Code: 'US', name: 'United States', phoneCode: '1' },
+    { alpha2Code: 'CA', name: 'Canada', phoneCode: '1' },
+    // Add more countries to the list
+  ];
 
   addNumberOfPages():void{
     const prevoiusValue = parseInt(this.checkoutForm.controls['number_of_pages'].value??"");
@@ -52,14 +57,20 @@ export class PriceFormComponent {
       this.checkoutForm.controls['number_of_pages'].setValue((prevoiusValue-1).toString());
   }
   getPriceDetail():void{
-    const payload = {
-      ...this.checkoutForm.value,
-      "dead_line":this.dead_line.controls['date'].value+this.dead_line.controls['time'].value
-    }
+    if(this.checkoutForm.valid){
+      const payload = {
+        ...this.checkoutForm.value,
+        "dead_line":this.dead_line.controls['date'].value+this.dead_line.controls['time'].value
+      }
 
-    this.dataService.getPriceData(payload as IPriceModel).subscribe((result)=>{
-      console.log(result);
-      this.discountedPrice.emit(result);
-    })
+      this.dataService.getPriceData(payload as IPriceModel).subscribe((result)=>{
+        console.log(result);
+        this.discountedPrice.emit(result);
+      })
+    }else{
+      Object.values(this.checkoutForm.controls).forEach(control => {
+        control.markAsTouched();
+      });
+    }
   }
 }
